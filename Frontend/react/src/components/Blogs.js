@@ -17,7 +17,7 @@ const Blogs = () => {
     // Fetch blogs from the Django backend
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/blogs/'); // Update with your backend URL
+        const response = await axios.get('https://api.rentasenepal.com/api/blogs/'); // Update with your backend URL
         setBlogs(response.data.blogs); // Set blogs data
         setIsLoading(false); // Loading done
       } catch (err) {

@@ -13,7 +13,7 @@
   },
   {
     "id": 3,
-    "name": "New-Baneshwor",
+    "name": "New Baneshwor",
     "image": "img/baneshwor.jpg",
     "description": "A prime Kathmandu location, Baneshwor offers well-equipped hostels with great connectivity, restaurants, and shopping centers."
   },
@@ -31,13 +31,13 @@
   },
   {
     "id": 6,
-    "name": "Mid-Baneshwor",
+    "name": "Mid Baneshwor",
     "image": "img/midbaneshwor.jpg",
     "description": "A well-connected area with student-friendly hostels, close to colleges, cafes, and essential services."
   },
   {
     "id": 7,
-    "name": "Old banshwor",
+    "name": "Old Baneshwor",
     "image": "img/oldbaneshwor.jpg",
     "description": "A well-connected neighborhood with comfortable hostels, close to educational hubs and essential amenities."
   },

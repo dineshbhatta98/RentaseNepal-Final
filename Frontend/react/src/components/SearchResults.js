@@ -54,7 +54,7 @@ const SearchResults = () => {
         connect: true,
         range: {
           min: 0,
-          max: 15000,
+          max: 25000,
         },
         step: 500,
         tooltips: [true, true],
@@ -124,7 +124,7 @@ const SearchResults = () => {
       if (token) {
         headers['Authorization'] = `token ${token}`;
       }
-      const response = await fetch('http://127.0.0.1:8000/api/hostels/filter/', {
+      const response = await fetch('https://api.rentasenepal.com/api/hostels/filter/', {
         method: 'POST',
         headers: headers,
         body: JSON.stringify(payload),

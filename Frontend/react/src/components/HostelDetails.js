@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -38,17 +39,17 @@ const HostelDetails = ({ userRole }) => {
     setError(null);
 
     try {
-      const token=localStorage.getItem('admin-token') || localStorage.getItem('user-token');
+      const token = localStorage.getItem('admin-token') || localStorage.getItem('user-token');
       const headers = {
         'Content-Type': 'application/json',
       };
-      
+
       // Only add Authorization header if the token exists
       if (token) {
         headers['Authorization'] = `token ${token}`;
       }
 
-      const response = await fetch(`http://127.0.0.1:8000/api/hostels/${id}/`, {
+      const response = await fetch(`https://api.rentasenepal.com/api/hostels/${id}/`, {
         method: 'GET',
         headers: headers,
       });
@@ -164,11 +165,11 @@ const HostelDetails = ({ userRole }) => {
               {/* Fee Structure */}
               <div className="hosteldetail-info">
                 <div className="hosteldetail-title">Fee Structure</div>
-                {hostel.admission_price_min>0 && <li>Admission Fee: NPR {hostel.admission_price}</li>}
-                {hostel.single_seater_price_min>0 && <li>One-seater: NPR {hostel.single_seater_price_min} - {hostel.single_seater_price_max}</li>}
-                {hostel.two_seater_price_min>0 && <li>Two-seater: NPR {hostel.two_seater_price_min} - {hostel.two_seater_price_max}</li>}
-                {hostel.three_seater_price_min>0 && <li>Three-seater: NPR {hostel.three_seater_price_min} - {hostel.three_seater_price_max}</li>}
-                {hostel.four_seater_price_min>0 && <li>Four-seater: NPR {hostel.four_seater_price_min} - {hostel.four_seater_price_max}</li>}
+                {hostel.admission_price > 0 && <li>Admission Fee: NPR {hostel.admission_price}</li>}
+                {hostel.single_seater_price_min > 0 && <li>One-seater: NPR {hostel.single_seater_price_min} - {hostel.single_seater_price_max}</li>}
+                {hostel.two_seater_price_min > 0 && <li>Two-seater: NPR {hostel.two_seater_price_min} - {hostel.two_seater_price_max}</li>}
+                {hostel.three_seater_price_min > 0 && <li>Three-seater: NPR {hostel.three_seater_price_min} - {hostel.three_seater_price_max}</li>}
+                {hostel.four_seater_price_min > 0 && <li>Four-seater: NPR {hostel.four_seater_price_min} - {hostel.four_seater_price_max}</li>}
               </div>
 
               {/* Facilities */}
@@ -234,6 +235,11 @@ const HostelDetails = ({ userRole }) => {
 
           {/* Right Section */}
           <div className="right-section">
+            {/* Description */}
+            <div className="hostel-description hosteldetail-info">
+              <div className="hosteldetail-title">About This Hostel</div>
+              <p>{hostel.description}</p>
+            </div>
             {/* Map */}
             {userRole === 'admin' && (<div className="map-box hosteldetail-info">
               <div className="hosteldetail-title">Location</div>

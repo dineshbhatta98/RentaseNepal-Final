@@ -145,7 +145,7 @@ const ListYourHostel = () => {
       });
 
       console.log(formDataToSend)
-      const response = await fetch("http://127.0.0.1:8000/api/hostels/", {
+      const response = await fetch("https://api.rentasenepal.com/api/hostels/", {
         method: "POST",
         headers: {
           Authorization: `token ${token}`,

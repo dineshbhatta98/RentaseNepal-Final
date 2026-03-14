@@ -16,8 +16,8 @@ const Blog = () => {
     // Fetch blogs from the Django backend
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/blogs/'); // Update with your backend URL
-        const responseBlog = await axios.get(`http://127.0.0.1:8000/api/blogs/${id}/`);
+        const response = await axios.get('https://api.rentasenepal.com/api/blogs/'); // Update with your backend URL
+        const responseBlog = await axios.get(`https://api.rentasenepal.com/api/blogs/${id}/`);
         setBlogs(response.data.blogs); // Set blogs data
         setBlog(responseBlog.data);
         console.log(
@@ -119,8 +119,8 @@ const Blog = () => {
         <h3>Follow Us</h3>
         <div className="blog-social-icons">
           <a href="https://www.facebook.com/profile.php?id=61559722175314" className="facebook"><i className="bi bi-facebook"></i></a>
-          <a href="mailto:rentasenepal@gmail.com" className="google"><i className="bi bi-envelope"></i></a>
-          <a href="#" className="whatsapp"><i className="bi bi-whatsapp"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rentasenepal@gmail.com" target="_blank"><i className="bi bi-envelope"></i></a>
+          <a href="https://wa.me/9779763271690" target="_blank" className="whatsapp"><i className="bi bi-whatsapp"></i></a>
           <a href="https://www.instagram.com/rentase_nepal/" className="instagram"><i className="bi bi-instagram"></i></a>
         </div>
       </div>

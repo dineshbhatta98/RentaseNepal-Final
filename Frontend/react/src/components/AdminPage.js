@@ -31,7 +31,7 @@ const AdminPage = ({ setisLoggedIn, setUserRole }) => {
     else if (filter === 'unfeatured') filters = { isFeatured: false };
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/hostels/filter/', {
+      const response = await fetch('https://api.rentasenepal.com/api/hostels/filter/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const AdminPage = ({ setisLoggedIn, setUserRole }) => {
   // Approve hostel
   const approveHostel = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/hostels/${id}/`, {
+      const response = await fetch(`https://api.rentasenepal.com/api/hostels/${id}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const AdminPage = ({ setisLoggedIn, setUserRole }) => {
   const toggleFeatured = async (id, isFeatured) => {
     try {
       // const token = localStorage.getItem('admin-token');
-      const response = await fetch(`http://127.0.0.1:8000/api/hostels/${id}/`, {
+      const response = await fetch(`https://api.rentasenepal.com/api/hostels/${id}/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const AdminPage = ({ setisLoggedIn, setUserRole }) => {
   const deleteHostel = async (id) => {
     try {
       // const token = localStorage.getItem('admin-token');
-      const response = await fetch(`http://127.0.0.1:8000/api/hostels/${id}/`, {
+      const response = await fetch(`https://api.rentasenepal.com/api/hostels/${id}/`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json', // Specify the content type
@@ -118,7 +118,7 @@ const AdminPage = ({ setisLoggedIn, setUserRole }) => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/blogs/', {
+      const response = await fetch('https://api.rentasenepal.com/api/blogs/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ const AdminPage = ({ setisLoggedIn, setUserRole }) => {
 
   const deleteBlog = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/blogs/${id}/`, {
+      const response = await fetch(`https://api.rentasenepal.com/api/blogs/${id}/`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

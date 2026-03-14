@@ -34,7 +34,7 @@ const AddBlog = ({ fetchBlogs }) => {
     const token = 'fdc19eacbd64d055f80b9486b4b4d1fc443f67cb'; // Use the appropriate token
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/blogs/', {
+      const response = await fetch('https://api.rentasenepal.com/api/blogs/', {
         method: 'POST',
         headers: {
           Authorization: `token ${token}`,
